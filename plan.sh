@@ -1,0 +1,4 @@
+docker run --rm --group-add root --env-file .aws_docker_creds.env --volume "C:\Users\jezdel\.ssh":/.ssh --volume "C:\Viya\viya4-iac-aws":/workspace docker-dope.cyber.sas.com/viya4-iac-aws:3.2.0 plan -var-file=/workspace/terraform.tfvars
+
+docker run --rm --group-add root --env-file .azure_docker_creds.env --volume "C:\Users\jezdel\.ssh":/.ssh --volume "C:\Viya\viya-azure\viya4-iac-azure":/workspace viya4-iac-azure plan -var-file=/workspace/terraform.tfvars -state=/workspace/terraform.tfstate
+docker run --rm --group-add root --env-file .azure_docker_creds.env --volume "C:\Users\jezdel\.ssh":/.ssh --volume "C:\Viya\viya-azure\ viya4-iac-azure":/workspace viya4-iac-azure apply -auto-approve -var-file=/workspace/terraform.tfvars -state/workspace/terraform.tfstate
